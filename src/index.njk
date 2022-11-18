@@ -544,6 +544,7 @@
                         name="first_name"
                         id="first_name"
                         placeholder="First Name"
+                        required
                       />
                       <label for="last_name" class="sr-only">Last Name</label>
                       <input
@@ -551,6 +552,7 @@
                         name="last_name"
                         id="last_name"
                         placeholder="Last Name"
+                        required
                       />
                     </div>
                     <div>
@@ -560,6 +562,7 @@
                         name="company"
                         id="company"
                         placeholder="Company"
+                        required
                       />
                     </div>
                     <div>
@@ -569,6 +572,7 @@
                         name="email"
                         id="email"
                         placeholder="Email"
+                        required
                       />
                     </div>
                     <div>
@@ -577,16 +581,20 @@
                         type="tel"
                         name="phone"
                         id="phone"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        title="Please enter phone number in the format 123-456-7890"
                         placeholder="Phone Number"
+                        required
                       />
                     </div>
                     <div>
                       <label for="notes" class="sr-only">
                         Why I want to join the alliance
                       </label>
-                      <textarea name="notes" id="notes">
-                        I'd like to join the r̶e̶b̶e̶l̶l̶i̶o̶n̶ alliance to help build the next generation of finance tools.
-                      </textarea>
+                      <textarea
+                        name="notes"
+                        id="notes"
+                      >I'd like to join the r̶e̶b̶e̶l̶l̶i̶o̶n̶ alliance to help build the next generation of finance tools.</textarea>
                     </div>
                     <input
                       id="form_name"
@@ -799,6 +807,7 @@
       for (var i = 0; i < classname.length; i++) {
         classname[i].addEventListener("click", animateButton, false);
       }
+
     </script>
   </body>
 </html>
