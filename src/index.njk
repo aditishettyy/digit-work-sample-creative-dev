@@ -808,6 +808,59 @@
         classname[i].addEventListener("click", animateButton, false);
       }
 
+    /*
+      $(function () {
+          $('#alliance-contact-form').submit(function () {
+            const formData = $('#alliance-contact-form').serializeArray();
+            var postData = {};
+            for (const element of formData) {
+              postData[element.name] = element.value;
+            }
+            $.ajax({
+              url: 'http://localhost:8081/submit',
+              type: 'post',
+              dataType: 'text',
+              cache: false,
+              data: postData,
+              crossDomain: true,
+              success: function (data) {
+                $('#alliance-form-container').css("display", "none");
+                $('#success-message').css("display", "block");
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                $('#alliance-form-container').css("display", "none");
+                $('#error-message').css("display", "block");
+              },
+              async: true,
+            });
+            $('#alliance-form-container').css("display", "none");
+            $('#success-message').css("display", "block");
+            return false;
+          })
+
+          $("#modalAlliance").on("show.bs.modal", function (e) {
+            $('#alliance-contact-form').each(function () {
+              this.reset();
+            });
+            $('#success-message').css("display", "none");
+            $('#error-message').css("display", "none");
+            $('#alliance-form-container').css("display", "block");
+          });
+      });
+    */
+
+      $(function () {
+        const searchParams = new URLSearchParams(window.location.search)
+        if (searchParams.has('form_name')) {
+          $('#modalAlliance').modal('show');
+          $('#alliance-form-container').css("display", "none");
+          $('#success-message').css("display", "block");
+        }
+        $("#modalAlliance").on("show.bs.modal", function (e) {
+          $('#success-message').css("display", "none");
+          $('#alliance-form-container').css("display", "block");
+        });
+      });
     </script>
   </body>
 </html>
