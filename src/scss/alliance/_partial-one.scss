@@ -389,6 +389,7 @@
     margin-top: 80px;
     #quotesSlider {
       .carousel-inner {
+        z-index: 9999999;
         .carousel-item {
           margin-bottom: -20px;
           min-height: 170px;
@@ -583,7 +584,7 @@
                   background-image: url(../images/kbc-white.png);
                 }
                 &.all-cents {
-                  background-image: url(../images/allscents-white.png);
+                  background-image: url(../images/allcents-white.png);
                 }
                 &.lionshare {
                   background-image: url(../images/lionshare-white.png);
@@ -613,7 +614,7 @@
                 height: 100%;
               }
               &.all-cents {
-                background-image: url(../images/allscents-blue.png);
+                background-image: url(../images/allcents-blue.png);
                 width: 35px;
                 height: 100%;
               }
