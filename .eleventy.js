@@ -16,6 +16,20 @@ module.exports = function(eleventyConfig) {
     const nonCacheUrl = new URL(url, site.baseUrl).href
     return `${nonCacheUrl}?${params}`;
   })
+
+  eleventyConfig.addNunjucksShortcode("carouselItem", function (item) {
+    return `<div class="carousel-item ${item.active ? `active` : ''}">
+              <div class="quote" id=${item.id}>
+                <p>
+                  ${item.title}
+                </p>
+                <cite>
+                  ${item.citeTitle1}
+                  <small> ${item.citeTitle2}</small>
+                </cite>
+              </div>
+            </div>`;
+  });
   
   return {
     dir: {
