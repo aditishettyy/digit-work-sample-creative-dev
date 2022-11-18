@@ -30,6 +30,8 @@ module.exports = class {
                 config.sourceMap = true
                 config.sourceMapEmbed = true
                 config.outputStyle = 'expanded'
+            } else {
+                config.outputStyle = 'compressed'    
             }
             return sass.render(config, (err, result) => {
                 if (err) {
